@@ -1,9 +1,11 @@
 require('dotenv').config();
+const cors = require('cors');
 const express = require('express');
 const app = express();
 const port = process.env.PORT;
 const fruits = require('./fruits'); //calling the fruits.js file which in turn references the fruits json
 
+app.use(cors());
 app.use(express.json()); //needs to be the top route so all other route requests go through it
 
 //Routes
